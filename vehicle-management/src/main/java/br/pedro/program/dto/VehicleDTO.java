@@ -6,31 +6,28 @@ public class VehicleDTO {
     private Integer id;
     private String brand;
     private String model;
-    private Integer year;
+    private String yearAndFuel;
     private Integer rotKey;
     private boolean rotation;
-
-    private UserDTO user;
-
-    public VehicleDTO(){}
+    private String price;
 
     public VehicleDTO(Vehicle vehicle){
         id = vehicle.getId();
         brand = vehicle.getBrand();
         model = vehicle.getModel();
-        year = vehicle.getYear();
+        yearAndFuel = vehicle.getYearAndFuel();
     }
 
-    public VehicleDTO(Vehicle vehicle, UserDTO user){
-        this(vehicle);
-        this.user = user;
-    }
-    public UserDTO getUser() {
-        return user;
+    public void setYearAndFuel(String yearAndFuel) {
+        this.yearAndFuel = yearAndFuel;
     }
 
-    public void setUser(UserDTO user) {
-        this.user = user;
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
     }
 
     public Integer getId() {
@@ -57,12 +54,12 @@ public class VehicleDTO {
         this.model = model;
     }
 
-    public Integer getYear() {
-        return year;
+    public String getYearAndFuel() {
+        return yearAndFuel;
     }
 
-    public void setYear(Integer year) {
-        this.year = year;
+    public void setYear(String yearAndFuel) {
+        this.yearAndFuel = yearAndFuel;
     }
 
     public Integer getRotKey() {

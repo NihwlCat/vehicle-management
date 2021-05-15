@@ -11,7 +11,7 @@ public class Vehicle {
     private Integer id;
     private String brand;
     private String model;
-    private Integer year;
+    private String yearAndFuel;
 
     @ManyToOne
     @JoinColumn (name = "owner_cpf")
@@ -20,11 +20,11 @@ public class Vehicle {
     public Vehicle () {
     }
 
-    public Vehicle(Integer id, String brand, String model, Integer year, User user) {
+    public Vehicle(Integer id, String brand, String model, String yearAndFuel, User user) {
         this.id = id;
         this.brand = brand;
         this.model = model;
-        this.year = year;
+        this.yearAndFuel = yearAndFuel;
         this.user = user;
     }
 
@@ -60,12 +60,12 @@ public class Vehicle {
         this.model = model;
     }
 
-    public Integer getYear() {
-        return year;
+    public String getYearAndFuel() {
+        return yearAndFuel;
     }
 
-    public void setYear(Integer year) {
-        this.year = year;
+    public void setYearAndFuel(String yearAndFuel) {
+        this.yearAndFuel = yearAndFuel;
     }
 
     @Override

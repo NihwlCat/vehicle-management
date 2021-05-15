@@ -28,6 +28,11 @@ public class UserDTO {
         vehicles.forEach(v -> this.vehicles.add(new VehicleDTO(v)));
     }
 
+    public UserDTO (User user, List<VehicleDTO> vehicles){
+        this(user);
+        this.vehicles = vehicles;
+    }
+
     public List<VehicleDTO> getVehicles() {
         return vehicles;
     }

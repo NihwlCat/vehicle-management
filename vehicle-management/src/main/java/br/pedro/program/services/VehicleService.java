@@ -8,4 +8,5 @@ public class VehicleService {
     @Autowired
     private VehicleRepository repository;
 
+
 }
