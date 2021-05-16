@@ -1,17 +1,20 @@
-INSERT INTO tb_user (cpf_id, name, email, birth_date) VALUES ('1090','Pedro','pedro@gmail.com',TIMESTAMP WITH TIME ZONE '2020-07-14T10:00:00Z')
-INSERT INTO tb_user (cpf_id, name, email, birth_date) VALUES ('1080','Matheus','matheus@gmail.com',TIMESTAMP WITH TIME ZONE '2020-07-14T10:00:00Z')
-INSERT INTO tb_user (cpf_id, name, email, birth_date) VALUES ('1070','João Lucas','joao@gmail.com',TIMESTAMP WITH TIME ZONE '2020-07-14T10:00:00Z')
-INSERT INTO tb_user (cpf_id, name, email, birth_date) VALUES ('1060','Miguel','miguel@gmail.com',TIMESTAMP WITH TIME ZONE '2020-07-14T10:00:00Z')
-INSERT INTO tb_user (cpf_id, name, email, birth_date) VALUES ('1050','Sara','sara@gmail.com',TIMESTAMP WITH TIME ZONE '2020-07-14T10:00:00Z')
+INSERT INTO tb_user (cpf_id, name, email, birth_date) VALUES ('9910','Pedro','pedro@gmail.com',TIMESTAMP WITH TIME ZONE '1997-07-14T10:00:00Z')
+INSERT INTO tb_user (cpf_id, name, email, birth_date) VALUES ('9920','Matheus','matheus@gmail.com',TIMESTAMP WITH TIME ZONE '2002-04-11T10:00:00Z')
+INSERT INTO tb_user (cpf_id, name, email, birth_date) VALUES ('9930','Gattuso','joao@gmail.com',TIMESTAMP WITH TIME ZONE '2003-07-18T10:00:00Z')
+INSERT INTO tb_user (cpf_id, name, email, birth_date) VALUES ('9940','Miguel','miguel@gmail.com',TIMESTAMP WITH TIME ZONE '1989-02-12T10:00:00Z')
+INSERT INTO tb_user (cpf_id, name, email, birth_date) VALUES ('9950','Sara','sara@gmail.com',TIMESTAMP WITH TIME ZONE '1999-12-13T10:00:00Z')
+INSERT INTO tb_user (cpf_id, name, email, birth_date) VALUES ('9960','Carlos','carlos@gmail.com',TIMESTAMP WITH TIME ZONE '1998-10-07T10:00:00Z')
 
-INSERT INTO tb_vehicle (brand, model, year_and_fuel, owner_cpf) VALUES ('Fiat','Uno',1094,'1080')
-INSERT INTO tb_vehicle (brand, model, year_and_fuel, owner_cpf) VALUES ('Hundai','Hun',2018,'1080')
-INSERT INTO tb_vehicle (brand, model, year_and_fuel, owner_cpf) VALUES ('Gol','Golzinho',1099,'1060')
-INSERT INTO tb_vehicle (brand, model, year_and_fuel, owner_cpf) VALUES ('Asc','Besc',2004,'1050')
-
-INSERT INTO TB_VEHICLE (ID, BRAND, MODEL, YEAR_AND_FUEL, OWNER_CPF) VALUES (99,'59','5940','2014-3','1090')
-INSERT INTO TB_VEHICLE (ID, BRAND, MODEL, YEAR_AND_FUEL, OWNER_CPF) VALUES (88,'21','453','2006-3','1090')
-INSERT INTO TB_VEHICLE (ID, BRAND, MODEL, YEAR_AND_FUEL, OWNER_CPF) VALUES (77,'21','453','2006-3','1090')
+INSERT INTO TB_VEHICLE (ID, BRAND, MODEL, YEAR_AND_FUEL, OWNER_CPF) VALUES (1,'171','6922','2017-1','9910')
+INSERT INTO TB_VEHICLE (ID, BRAND, MODEL, YEAR_AND_FUEL, OWNER_CPF) VALUES (2,'21','453','2006-3','9930')
+INSERT INTO TB_VEHICLE (ID, BRAND, MODEL, YEAR_AND_FUEL, OWNER_CPF) VALUES (3,'42','1780','1995-3','9960')
+INSERT INTO TB_VEHICLE (ID, BRAND, MODEL, YEAR_AND_FUEL, OWNER_CPF) VALUES (4,'120','3998','2011-1','9910')
+--INSERT INTO TB_VEHICLE (ID, BRAND, MODEL, YEAR_AND_FUEL, OWNER_CPF) VALUES (5,'21','453','2006-3','9960')
+--INSERT INTO TB_VEHICLE (ID, BRAND, MODEL, YEAR_AND_FUEL, OWNER_CPF) VALUES (6,'21','453','2006-3','9960')
+--INSERT INTO TB_VEHICLE (ID, BRAND, MODEL, YEAR_AND_FUEL, OWNER_CPF) VALUES (7,'21','453','2006-3','9960')
+--INSERT INTO TB_VEHICLE (ID, BRAND, MODEL, YEAR_AND_FUEL, OWNER_CPF) VALUES (8,'21','453','2006-3','9960')
+--INSERT INTO TB_VEHICLE (ID, BRAND, MODEL, YEAR_AND_FUEL, OWNER_CPF) VALUES (9,'21','453','2006-3','9960')
+--INSERT INTO TB_VEHICLE (ID, BRAND, MODEL, YEAR_AND_FUEL, OWNER_CPF) VALUES (10,'21','453','2006-3','9960')
 
 
 

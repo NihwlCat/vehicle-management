@@ -10,9 +10,13 @@ import java.util.Set;
 @Table(name = "tb_user")
 public class User {
 
+    @Column (unique = true)
     @Id
     private String cpfId;
+
     private String name;
+
+    @Column (unique = true)
     private String email;
 
     @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")

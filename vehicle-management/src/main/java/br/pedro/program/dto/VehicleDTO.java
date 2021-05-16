@@ -1,8 +1,14 @@
 package br.pedro.program.dto;
 
 import br.pedro.program.entities.Vehicle;
+import br.pedro.program.services.validation.VehicleValidData;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
-public class VehicleDTO {
+import java.io.Serializable;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@VehicleValidData
+public class VehicleDTO implements Serializable {
     private Integer id;
     private String brand;
     private String model;
@@ -10,6 +16,8 @@ public class VehicleDTO {
     private Integer rotKey;
     private boolean rotation;
     private String price;
+
+    public VehicleDTO(){}
 
     public VehicleDTO(Vehicle vehicle){
         id = vehicle.getId();

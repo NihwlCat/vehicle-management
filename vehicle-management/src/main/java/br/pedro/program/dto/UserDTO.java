@@ -1,20 +1,29 @@
 package br.pedro.program.dto;
 
 import br.pedro.program.entities.User;
-import br.pedro.program.entities.Vehicle;
+import br.pedro.program.services.validation.UserValidData;
 
+import javax.validation.constraints.Email;
+import java.io.Serializable;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
-public class UserDTO {
+@UserValidData
+public class UserDTO implements Serializable {
+
     private String cpfId;
+
     private String name;
+
+    @Email(message = "Deve ser inserido um email")
     private String email;
+
     private Instant birthDate;
 
     private List<VehicleDTO> vehicles = new ArrayList<>();
+
+    public UserDTO (){ }
 
     public UserDTO (User user){
         cpfId = user.getCpfId();
@@ -23,15 +32,11 @@ public class UserDTO {
         birthDate = user.getBirthDate();
     }
 
-    public UserDTO (User user, Set<Vehicle> vehicles){
-        this(user);
-        vehicles.forEach(v -> this.vehicles.add(new VehicleDTO(v)));
-    }
-
     public UserDTO (User user, List<VehicleDTO> vehicles){
         this(user);
         this.vehicles = vehicles;
     }
+
 
     public List<VehicleDTO> getVehicles() {
         return vehicles;
