@@ -36,3 +36,4 @@ public class UserValidatorData implements ConstraintValidator<UserValidData, Use
         return list.isEmpty();
     }
 }
+

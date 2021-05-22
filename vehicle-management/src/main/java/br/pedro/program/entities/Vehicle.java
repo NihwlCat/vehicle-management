@@ -17,8 +17,7 @@ public class Vehicle {
     @JoinColumn (name = "owner_cpf")
     private User user;
 
-    public Vehicle () {
-    }
+    public Vehicle () { }
 
     public Vehicle(Integer id, String brand, String model, String yearAndFuel, User user) {
         this.id = id;

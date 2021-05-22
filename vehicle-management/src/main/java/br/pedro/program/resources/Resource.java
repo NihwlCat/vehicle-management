@@ -4,7 +4,6 @@ import br.pedro.program.dto.UserDTO;
 import br.pedro.program.dto.VehicleDTO;
 import br.pedro.program.services.UserService;
 import br.pedro.program.services.VehicleService;
-import br.pedro.program.services.feign.FIPEClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,9 +23,6 @@ public class Resource {
 
     @Autowired
     private VehicleService vehicleService;
-
-    @Autowired
-    private FIPEClient fipe;
 
     @GetMapping (value = "/{cpf}")
     public ResponseEntity<UserDTO> findByCpf (@PathVariable String cpf){
@@ -49,5 +45,4 @@ public class Resource {
         vehicleService.insert(cpf,vehicle);
         return ResponseEntity.status(HttpStatus.valueOf(201)).body(vehicle);
     }
-
 }

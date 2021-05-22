@@ -10,7 +10,6 @@ import java.util.Set;
 @Table(name = "tb_user")
 public class User {
 
-    @Column (unique = true)
     @Id
     private String cpfId;
 

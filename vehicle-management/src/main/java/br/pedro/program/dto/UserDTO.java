@@ -4,6 +4,7 @@ import br.pedro.program.entities.User;
 import br.pedro.program.services.validation.UserValidData;
 
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 import java.time.Instant;
 import java.util.ArrayList;
@@ -12,11 +13,13 @@ import java.util.List;
 @UserValidData
 public class UserDTO implements Serializable {
 
+    @NotBlank
     private String cpfId;
 
     private String name;
 
     @Email(message = "Deve ser inserido um email")
+    @NotBlank
     private String email;
 
     private Instant birthDate;

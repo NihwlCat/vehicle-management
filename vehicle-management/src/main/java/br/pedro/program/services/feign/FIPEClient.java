@@ -21,3 +21,4 @@ public interface FIPEClient {
     @RequestMapping(method = RequestMethod.GET, value = "carros/marcas/{brand}/modelos/{model}/anos/{yearAndFuel}")
     Response getFipeYearAndFuel(@PathVariable String brand, @PathVariable String model, @PathVariable String yearAndFuel);
 }
+

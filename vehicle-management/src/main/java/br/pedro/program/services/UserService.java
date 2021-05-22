@@ -9,7 +9,6 @@ import br.pedro.program.services.feign.FIPEClient;
 import br.pedro.program.services.feign.FIPEObject;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import feign.FeignException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -28,6 +27,8 @@ public class UserService {
     @Autowired
     private FIPEClient fipe;
 
+
+    // Método para transformar String json em Object
     private FIPEObject jsonToObject(String json){
         ObjectMapper mapper = new ObjectMapper();
 
@@ -68,16 +69,9 @@ public class UserService {
             cal.setTime(new Date());
             int day = cal.get(Calendar.DAY_OF_WEEK);
 
-            String json;
-
-            try {
-                json = fipe.getFipeInformations(vehicle.getBrand(), vehicle.getModel(), vehicle.getYearAndFuel());
-            } catch (FeignException e){
-                throw new DataErrorException("404 - Not found [GET] Feign");
-            }
+            String json = fipe.getFipeInformations(vehicle.getBrand(), vehicle.getModel(), vehicle.getYearAndFuel());
 
             vehicle.setPrice(jsonToObject(json).getValue());
-
             vehicle.setRotation(tryRotation(day,vehicle.getRotKey()));
         });
 
@@ -91,15 +85,7 @@ public class UserService {
         List<VehicleDTO> vehicles = user.getVehicles().stream().map(VehicleDTO::new).collect(Collectors.toList());
 
         vehicles.forEach(vehicle -> {
-            String json;
-
-            try {
-                json = fipe.getFipeInformations(vehicle.getBrand(), vehicle.getModel(), vehicle.getYearAndFuel());
-            } catch (FeignException e){
-                throw new DataErrorException("404 - Not found [GET] Feign");
-            }
-
-            FIPEObject obj = jsonToObject(json);
+            FIPEObject obj = jsonToObject(fipe.getFipeInformations(vehicle.getBrand(), vehicle.getModel(), vehicle.getYearAndFuel()));
 
             Calendar cal = Calendar.getInstance();
             cal.setTime(new Date());
@@ -109,11 +95,11 @@ public class UserService {
             vehicle.setModel(obj.getModel());
             vehicle.setPrice(obj.getValue());
             vehicle.setRotation(tryRotation(day,Integer.parseInt(vehicle.getYearAndFuel().substring(3,4))));
-
         });
 
         return vehicles;
     }
+
 
     @Transactional
     public void insert (UserDTO dto){

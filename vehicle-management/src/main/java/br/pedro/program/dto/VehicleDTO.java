@@ -4,11 +4,14 @@ import br.pedro.program.entities.Vehicle;
 import br.pedro.program.services.validation.VehicleValidData;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
+import javax.validation.constraints.Null;
 import java.io.Serializable;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @VehicleValidData
 public class VehicleDTO implements Serializable {
+
+    @Null (message = "Impossível definir um ID")
     private Integer id;
     private String brand;
     private String model;
